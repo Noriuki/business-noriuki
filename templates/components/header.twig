@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="col-4">
+        <a class="hdr-logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
+    </div>
+    <div class="col-8">
+        <nav id="nav-main" class="nav-main" role="navigation">  
+            {% include "components/menu.twig" with {'items': menu.get_items} %}
+        </nav><!-- #nav -->
+    </div>
+</div>
