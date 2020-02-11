@@ -1,3 +1,42 @@
-.container{
-    background-color: cornflowerblue;
+
+div#home{
+   width: 100%;
+   height: 100vh;
+   background: linear-gradient( to right, rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('../img/team.png') no-repeat;
+   background-size: cover;
+}
+div#statistic{
+   width: 100%;
+   text-align: center;
+   height: 140px;
+   padding: 20px;;
+   background-color: #f2f2f2;
+}
+/* header */
+header{
+   width: 100%;
+   height: 3.8rem;
+   position: relative;
+   background-color: rgba(0,0,0,0);
+}
+
+.sticky {
+   width: 100%;
+   height: 3.8rem;
+   position: fixed;
+   top: 0;
+   background-color: rgba(255, 255, 255, 0.85);
+ }
+ .sticky a{
+    color: #00BFFF;
+ }
+ .sticky a:hover{
+   border-bottom: 1px solid #00BFFF;
+ }
+
+header .container {
+   height: 100%;
+   align-items: center;
+   justify-content: center;
+   font-size: 1.3rem;
 }

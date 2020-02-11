@@ -1,11 +1,37 @@
-{% extends "base.twig" %}
-
-{% block content %}
-	<h2>{{ foo }}</h2>
-	<p>{{ qux }}</p>
-	{% for post in posts %}
-		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
-	{% endfor %}
-	
-	{% include 'components/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+{% block html_head_container %}
 {% endblock %}
+	{% include 'components/html-header.twig' %}
+
+	<body class="{{body_class}}" data-template="base.twig">
+
+      <div id="home">
+         <header id="headerHome">
+            {% include 'components/header.twig'%}
+         </header>
+
+      </div>
+      {% include 'components/statistic.twig' %}
+
+      <footer id="footer">
+         {% include 'components/footer.twig' %}
+      </footer>
+
+      {{ function('wp_footer') }}
+      <script>
+         window.onscroll = function() {fixeNav()};
+
+         var header = document.getElementById("headerHome");
+
+         var sticky = header.offsetTop;
+
+         function fixeNav() {
+            if (window.pageYOffset > sticky) {
+               header.classList.add("sticky");
+            } else {
+               header.classList.remove("sticky");
+            }
+         }
+      </script>
+
+	</body>
+</html>
