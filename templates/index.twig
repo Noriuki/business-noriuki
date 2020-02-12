@@ -8,12 +8,19 @@
          <header id="headerHome">
             {% include 'components/header.twig'%}
          </header>
-
+         <div class="container" id="intro">
+               <div class="col-8">
+                  <h2>A place in the web for your company!</h2>
+                  <a href="#">About</a>
+               </div>
+         </div>
       </div>
-      {% include 'components/statistic.twig' %}
-
-      <footer id="footer">
-         {% include 'components/footer.twig' %}
+      {% include 'components/about.twig' %}
+      {% include 'components/contact.twig'%}
+      <footer>
+         <div class="container" id="footer">
+            {% include 'components/footer.twig' %}
+         </div>
       </footer>
 
       {{ function('wp_footer') }}
