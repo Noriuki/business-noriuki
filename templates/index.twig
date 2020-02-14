@@ -1,22 +1,18 @@
-{% block html_head_container %}
-{% endblock %}
-	{% include 'components/html-header.twig' %}
-
+   {% include 'components/html-header.twig' %}
 	<body class="{{body_class}}" data-template="base.twig">
 
       <div id="home">
-         <header id="headerHome">
-            {% include 'components/header.twig'%}
-         </header>
+         {% include 'components/header.twig'%}
          <div class="container" id="intro">
-               <div class="col-8">
+               <div class="col-7 col-12-sm">
                   <h2>A place in the web for your company!</h2>
-                  <a href="#">About</a>
+                  <a href="#footer">Contact!</a>
                </div>
          </div>
       </div>
+      {% include 'components/customer.twig' %}
       {% include 'components/about.twig' %}
-      {% include 'components/contact.twig'%}
+      {% include 'components/contact.twig' %}
       <footer>
          <div class="container" id="footer">
             {% include 'components/footer.twig' %}
@@ -24,21 +20,6 @@
       </footer>
 
       {{ function('wp_footer') }}
-      <script>
-         window.onscroll = function() {fixeNav()};
-
-         var header = document.getElementById("headerHome");
-
-         var sticky = header.offsetTop;
-
-         function fixeNav() {
-            if (window.pageYOffset > sticky) {
-               header.classList.add("sticky");
-            } else {
-               header.classList.remove("sticky");
-            }
-         }
-      </script>
-
+      <script src="{{site.theme.link}}/static/js/site.js"></script>
 	</body>
 </html>

@@ -1,5 +1,19 @@
-{% extends "base.twig" %}
+{% include 'components/html-header.twig' %}
+	<body class="{{body_class}}" data-template="base.twig">
 
-{% block content %}
-	Sorry, we couldn't find what you're looking for.
-{% endblock %}
+		<div class="container" id="page404">
+			{% include 'components/header.twig'%}
+			<div class="fof">
+				<h2>Content not found!</h2>
+			</div>
+		</div>
+		<footer>
+			<div class="container" id="footer">
+				{% include 'components/footer.twig' %}
+			</div>
+		</footer>
+
+		{{ function('wp_footer') }}
+		<script src="{{site.theme.link}}/static/js/site.js"></script>
+	</body>
+</html>

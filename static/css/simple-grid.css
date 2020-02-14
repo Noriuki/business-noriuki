@@ -18,6 +18,9 @@ a{
    text-decoration: none;
    color: white;
 }
+a:focus{
+  outline:0;
+}
 li{
    list-style: none;
 }
@@ -103,7 +106,7 @@ li{
 }
 
 .col-12-sm {
-  width: 96%;
+  width: 100%;
 }
 
 .row::after {

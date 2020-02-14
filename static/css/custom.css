@@ -1,15 +1,60 @@
+/* media queries */
+@media (max-width: 600px) 
+{  
+   *:not(img):not(#page404){
+      height: max-content!important;
+   }
+
+   /* menu-mobile */
+   header{
+      height: max-content!important;
+   }
+   #menu a, #menu a:hover, #menu a:active{
+      border: none!important;
+      background: none!important;
+   }
+   #menu a:hover{
+      color: #00BFFF;
+   }
+   #menu a:not(.icon){display: none;}
+   #menu .icon{
+      display: block;
+   }
+   #history{
+      flex-direction: column;
+      height: max-content;
+   }
+
+   /*active menu*/
+   #menu.active {position: relative;}
+   #menu.active .icon{
+      position: absolute;
+      left: 0;
+      top: 0;
+  }
+  #menu.active  a:not(.icon){
+      margin-top: 15px;
+      float: none;
+      display: block;
+      text-align: right;
+  }
+}
 /* home page*/
+.icon{
+   display: none;
+   float: left;
+}
 div#home{
    width: 100%;
    height: 100vh;
    background: linear-gradient( to right, rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('../img/team.png') no-repeat fixed;
    background-size: cover;
    color: white;
-   border-bottom: 1px groove white;
+   font-weight: 900;
 }
 #intro{
    height: 40vh;
-   padding: 20%;
+   padding: 10%;
    text-align: center;
    font-size: 1.8rem;
 }
@@ -23,42 +68,72 @@ div#home{
 #intro a:hover{
    filter: brightness(105%); 
 }
+
 /* about page */
 #about{
-   margin: 25px 0px;
+   height: 100vh;
    background-color: #f2f2f2;
    padding: 20px 0px 10px 0px;
-   border-top: 1px groove white;
-   border-bottom: 1px groove white;
 }
-
 #about > div{
    display: flex;
    justify-content: space-between;
    text-align: center;
 }
+
 #history{
    margin-top: 20px;
    border-top: 1px groove white;
    padding: 20px 0px;
-   display: flex;
-   text-align: justify;
 }
 #history div {
    margin: 5px;
    text-align: justify;
    padding: 0px 10px;
 }
-
 #history img{
    border: 5px solid white;
 }
 
-/*contact page*/
+/* customer page*/
+#customer{
+   padding: 10px 0px;
+   text-align: center;
+   flex-wrap: wrap;
+   height: max-content;
+}
+#customer div{
+   height: max-content;
+   padding: 20px 0px;
+}
+#customer img{
+   border-radius: 50%;
+   border: 2px solid #00BFFF;
+}
+#customer img:hover{
+   opacity: 0.95;
+}
+
+/* contact page */
 #contact{
-   background-color: #f2f2f2;
-   border-top: 1px groove white;
-   border-bottom: 1px groove white;
+   padding: 15px 0px;
+   justify-content: center;
+   align-items: center;
+   font-size: 1.3rem;
+}
+#contact div{
+   padding: 10px;
+}
+#contact iframe{
+   height: 300px;
+   width: 80%;
+   border: 2px solid #f2f2f2;
+   border-radius: 5px;
+}
+#contact-info{
+   padding-left: 20px!important;
+   border-radius: 10px 0px 0px 10px;
+   background: linear-gradient(to right, rgba(1,1,1,0.1), rgba(255, 255 ,255 , 1));
 }
 /* header */
 header{
@@ -69,12 +144,19 @@ header{
 }
 header a{
    padding: 5px 10px;
+   border: 2px solid white;
    border-radius: 20px;
 }
 header a:hover {
    background-color: white;
    color: #00BFFF;
 }
+header > .container  div{
+   height: 100%;
+   font-size: 1.3rem;
+   text-align: center;
+}
+
 .sticky {
    width: 100%;
    height: 3.8rem;
@@ -86,17 +168,12 @@ header a:hover {
    color: #00BFFF;
    padding: 5px 10px;
    border-radius: 20px;
+   border: none;
  }
  .sticky a:hover{
    background-color: #00BFFF;
    color: white;
  }
-
-header > .container  div{
-   height: 100%;
-   font-size: 1.3rem;
-   text-align: center;
-}
 /*foooter*/
 footer{
    border-top: 1px solid black;
@@ -108,5 +185,39 @@ footer{
 }
 #footer hr{
    margin: 0;
-   width: 300px;
+   width: 22%;
+}
+
+/* 404 page */
+#page404{
+   width: 100%;
+   height: calc(100vh - 126px);
+   text-align: center;
+   background-color: #f2f2f2;
+   align-items: baseline;
+}
+#page404 a{
+   color: black;
+   border-color: black;
+}
+#page404 a:hover{
+   color: white;
+   background-color: black;
+}
+#page404 header{
+   border-bottom: 2px solid black;
+}
+.fof{
+   padding: 20px;
+}
+.fof h1{
+    font-size: 50px;
+    display: inline-block;
+    padding-right: 12px;
+    animation: type .5s alternate infinite;
+}
+
+@keyframes type{
+    from{box-shadow: inset -3px 0px 0px black;}
+    to{box-shadow: inset -3px 0px 0px transparent;}
 }

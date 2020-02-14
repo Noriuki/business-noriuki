@@ -1,10 +1,15 @@
-<div class="container">
-    <div class="col-4">
-        <a class="hdr-logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
+<header id="header">
+    <div class="container" id="menu">
+        <div class="col-4">
+            <a class="hdr-logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
+            <a href="javascript:;" class="icon" onclick="responsiveMenu()">
+                <img src="{{site.theme.link}}/static/img/burguer-menu.png" width="50" height="50">
+            </a>        
+        </div>
+        <div class="col-8">
+            <nav role="navigation">  
+                {% include "components/menu.twig" with {'items': menu.get_items} %}
+            </nav><!-- #nav -->
+        </div>
     </div>
-    <div class="col-8">
-        <nav id="nav-main" class="nav-main" role="navigation">  
-            {% include "components/menu.twig" with {'items': menu.get_items} %}
-        </nav><!-- #nav -->
-    </div>
-</div>
+</header>
