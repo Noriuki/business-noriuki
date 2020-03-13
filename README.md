@@ -1,3 +1,3 @@
 # business-noriuki
-Wordpress OnePage Theme
+Wordpress OnePage Theme.
 Demo: http://noriuki.atwebpages.com/
